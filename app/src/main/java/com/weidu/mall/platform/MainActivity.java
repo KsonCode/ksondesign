@@ -2,6 +2,7 @@ package com.weidu.mall.platform;
 
 import com.example.lib_core.base.mvp.BaseMvpActivity;
 import com.example.lib_core.base.mvp.BasePresenter;
+import com.example.lib_core.utils.SpUtils;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.weidu.mall.platform.contract.ProductContract;
 import com.weidu.mall.platform.presenter.ProductPresenter;
@@ -43,7 +44,10 @@ public class MainActivity extends BaseMvpActivity<ProductContract.IProductModel,
     @Override
     public void success(String result) {
 
-        showToast(result);
+//        showToast(result);
+        SpUtils.getInstance().putSp("userId","1");
+        SpUtils.getInstance().putSp("sessionId","1767676767676767");
+
 
     }
 

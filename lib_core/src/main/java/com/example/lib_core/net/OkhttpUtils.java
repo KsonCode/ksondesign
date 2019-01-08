@@ -3,6 +3,8 @@ package com.example.lib_core.net;
 import android.os.Handler;
 
 
+import com.example.lib_core.interceptor.HeaderInterceptor;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -37,6 +39,7 @@ public class OkhttpUtils {
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)//添加日志拦截器
+                .addInterceptor(new HeaderInterceptor())//头部入参
                 .writeTimeout(5, TimeUnit.SECONDS)
                 .connectTimeout(5, TimeUnit.SECONDS)
                 .readTimeout(5, TimeUnit.SECONDS)
