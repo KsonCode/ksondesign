@@ -1,13 +1,17 @@
 package com.weidu.mall.platform;
 
+import android.support.v7.widget.LinearLayoutManager;
+
 import com.example.lib_core.base.mvp.BaseMvpActivity;
 import com.example.lib_core.base.mvp.BasePresenter;
-import com.example.lib_core.utils.SpUtils;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
+import com.weidu.mall.platform.adapter.ProductAdapter;
 import com.weidu.mall.platform.contract.ProductContract;
+import com.weidu.mall.platform.entity.ProductBean;
 import com.weidu.mall.platform.presenter.ProductPresenter;
 
 import java.util.HashMap;
+import java.util.List;
 
 import butterknife.BindView;
 
@@ -22,11 +26,10 @@ public class MainActivity extends BaseMvpActivity<ProductContract.IProductModel,
     @Override
     protected void initData() {
         super.initData();
-        HashMap<String,String> params = new HashMap<>();
-        params.put("keyword","手机");
-        params.put("page","1");
-        params.put("count","5");
-        presenter.getProductList(params);
+//        HashMap<String,String> params = new HashMap<>();
+////        params.put("keywords","手机");
+////        params.put("page","1");
+        presenter.getProductList(new HashMap<String, String>());
 
 
     }
@@ -42,11 +45,19 @@ public class MainActivity extends BaseMvpActivity<ProductContract.IProductModel,
     }
 
     @Override
-    public void success(String result) {
+    public void success(List<ProductBean.ProductItemBean> productBean) {
 
 //        showToast(result);
-        SpUtils.getInstance().putSp("userId","1");
-        SpUtils.getInstance().putSp("sessionId","1767676767676767");
+//        SpUtils.getInstance().putSp("userId","1");
+//        SpUtils.getInstance().putSp("sessionId","1767676767676767");
+
+        ProductAdapter productAdapter = new ProductAdapter(productBean,this);
+
+        rv.setLayoutManager(new LinearLayoutManager(this));
+        rv.setAdapter(productAdapter);
+
+
+
 
 
     }

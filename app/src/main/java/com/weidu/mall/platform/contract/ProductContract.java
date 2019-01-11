@@ -3,10 +3,11 @@ package com.weidu.mall.platform.contract;
 import com.example.lib_core.base.mvp.BasePresenter;
 import com.example.lib_core.base.mvp.IBaseModel;
 import com.example.lib_core.base.mvp.IBaseView;
-import com.example.lib_core.net.OkhttpCallback;
+import com.weidu.mall.platform.entity.ProductBean;
 import com.weidu.mall.platform.model.ProductModel;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * 商品相关契约类
@@ -31,7 +32,7 @@ public interface ProductContract {
 
     interface IProductView extends IBaseView{
 
-        void success(String result);
+        void success(List<ProductBean.ProductItemBean> list);
         void keywordsEmpty(String error);
 
     }

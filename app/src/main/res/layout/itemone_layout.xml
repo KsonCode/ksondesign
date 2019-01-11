@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/item_shape_bg">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_width="85dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        android:layout_height="99dp" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_marginTop="10dp"
+        android:text="apple iphone"
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/price"
+        android:text="¥：109999"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+
+
+
+
+</LinearLayout>

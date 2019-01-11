@@ -5,5 +5,5 @@ import com.example.lib_core.common.Constants;
 
 public class ProductApi {
 
-    public static final String PRODUCT_API = Api.BASE_URL+"small/commodity/v1/findCommodityByKeyword";
+    public static final String PRODUCT_API = Api.BASE_URL+"small/commodity/v1/commodityList";
 }
