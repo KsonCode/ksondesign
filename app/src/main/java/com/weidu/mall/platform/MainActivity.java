@@ -23,16 +23,18 @@ public class MainActivity extends BaseMvpActivity<ProductContract.IProductModel,
 
 
 
-    @Override
-    protected void initData() {
-        super.initData();
-//        HashMap<String,String> params = new HashMap<>();
-////        params.put("keywords","手机");
-////        params.put("page","1");
-        presenter.getProductList(new HashMap<String, String>());
+//    @Override
+//    protected void initData() {
+//        super.initData();
+////        HashMap<String,String> params = new HashMap<>();
+//////        params.put("keywords","手机");
+//////        params.put("page","1");
+//        presenter.getProductList(new HashMap<String, String>());
+//
+//
+//    }
 
 
-    }
 
     @Override
     protected void initView() {
@@ -88,5 +90,11 @@ public class MainActivity extends BaseMvpActivity<ProductContract.IProductModel,
 
         showToast(msg);
 
+    }
+
+
+    @Override
+    protected void init() {
+        presenter.getProductList(new HashMap<String, String>());
     }
 }

@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.weidu.mall.platform.R;
 import com.weidu.mall.platform.entity.ProductBean;
 
@@ -31,11 +32,17 @@ public class ItemOneAdapter extends RecyclerView.Adapter<ItemOneAdapter.MyVh> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyVh myVh, int i) {
+    public void onBindViewHolder(@NonNull MyVh myVh, int position) {
 
-        myVh.titleTv.setText(commodityList.get(i).commodityName);
-        Glide.with(context).load(commodityList.get(i).masterPic).into(myVh.iv);
-        myVh.priceTv.setText("¥："+commodityList.get(i).price);
+        myVh.titleTv.setText(commodityList.get(position).commodityName);
+        Glide.with(context).load(commodityList.get(position).masterPic).into(myVh.iv);
+        myVh.priceTv.setText("¥："+commodityList.get(position).price);
+
+        if (position==commodityList.size()-1){
+            myVh.view.setVisibility(View.GONE);
+        }else{
+            myVh.view.setVisibility(View.VISIBLE);
+        }
 
 
     }
@@ -47,12 +54,14 @@ public class ItemOneAdapter extends RecyclerView.Adapter<ItemOneAdapter.MyVh> {
 
     public class MyVh extends RecyclerView.ViewHolder{
         private TextView titleTv,priceTv;
-        private ImageView iv;
+        private RoundedImageView iv;
+        private View view;
         public MyVh(@NonNull View itemView) {
             super(itemView);
             titleTv = itemView.findViewById(R.id.tv);
             iv = itemView.findViewById(R.id.iv);
             priceTv = itemView.findViewById(R.id.price);
+            view = itemView.findViewById(R.id.border);
 
         }
     }

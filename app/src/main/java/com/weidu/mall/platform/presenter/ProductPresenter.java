@@ -22,14 +22,14 @@ public class ProductPresenter extends ProductContract.ProductPresenter {
 
             @Override
             public void success(String result) {
-                ProductBean productBean = new Gson().fromJson(result,ProductBean.class);
-                List<ProductBean.ProductItemBean> list = new ArrayList<>();
+                    ProductBean productBean = new Gson().fromJson(result,ProductBean.class);
+                    List<ProductBean.ProductItemBean> list = new ArrayList<>();
 
-                list.addAll(productBean.result.rxxp);//添加集合数据到当前集合内
-                list.addAll(productBean.result.pzsh);
-                list.addAll(productBean.result.mlss);
+                    list.addAll(productBean.result.rxxp);//添加集合数据到当前集合内
+                    list.addAll(productBean.result.pzsh);
+                    list.addAll(productBean.result.mlss);
 
-                view.success(list);
+                    view.success(list);
 
 
 //                if (productBean!=null){

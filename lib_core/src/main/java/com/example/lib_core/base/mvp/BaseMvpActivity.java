@@ -17,7 +17,13 @@ public abstract class BaseMvpActivity<M extends IBaseModel,P extends BasePresent
 
             }
         }
+
+        init();
     }
+
+    protected abstract void init();
+
+
 
     @Override
     protected void onDestroy() {
