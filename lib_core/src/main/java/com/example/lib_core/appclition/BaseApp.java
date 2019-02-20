@@ -10,7 +10,7 @@ public class BaseApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        context = this;
+        context = getApplicationContext();
     }
 
     public static Context getContext() {

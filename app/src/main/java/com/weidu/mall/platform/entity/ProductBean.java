@@ -1,12 +1,14 @@
 package com.weidu.mall.platform.entity;
 
+import com.example.lib_network.bean.BaseResponseBean;
+
 import java.util.List;
 
-public class ProductBean {
+public class ProductBean extends BaseResponseBean {
 
-    public String message;
-    public String status;
-    public Product result;
+//    public String message;
+//    public String status;
+//    public Product result;
 
     public static class Product{
         public List<ProductItemBean> rxxp;

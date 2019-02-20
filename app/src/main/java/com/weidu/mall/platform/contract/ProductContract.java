@@ -22,6 +22,7 @@ public interface ProductContract {
         }
 
         public abstract void getProductList(HashMap<String, String> params);
+        public abstract void getProductDetail(HashMap<String, String> params);
     }
 
     interface IProductModel extends IBaseModel{

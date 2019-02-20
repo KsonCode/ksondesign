@@ -1,4 +1,4 @@
-package com.example.lib_net;
+package com.example.lib_network;
 
 import org.junit.Test;
 

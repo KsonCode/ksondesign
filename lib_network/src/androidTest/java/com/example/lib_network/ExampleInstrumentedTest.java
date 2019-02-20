@@ -1,4 +1,4 @@
-package com.example.lib_net;
+package com.example.lib_network;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.lib_net.test", appContext.getPackageName());
+        assertEquals("com.example.lib_network.test", appContext.getPackageName());
     }
 }
