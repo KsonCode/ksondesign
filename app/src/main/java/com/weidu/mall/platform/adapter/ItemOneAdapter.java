@@ -6,20 +6,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.weidu.mall.platform.R;
-import com.weidu.mall.platform.entity.ProductBean;
+import com.weidu.mall.platform.entity.HomeBean;
 
 import java.util.List;
 
 public class ItemOneAdapter extends RecyclerView.Adapter<ItemOneAdapter.MyVh> {
     private Context context;
-    private List<ProductBean.ProductItemBean.ProductItem> commodityList ;
-    public ItemOneAdapter(Context context,List<ProductBean.ProductItemBean.ProductItem> commodityList) {
+    private List<HomeBean.ProductItemBean.ProductItem> commodityList ;
+    public ItemOneAdapter(Context context,List<HomeBean.ProductItemBean.ProductItem> commodityList) {
         this.commodityList = commodityList;
         this.context =context;
     }

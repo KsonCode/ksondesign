@@ -25,8 +25,12 @@ public abstract class HttpObserver<T extends BaseResponseBean> implements Observ
     private Activity activity;
     //  Activity 是否在执行onStop()时取消订阅
     private boolean isAddInStop = false;
+    //绑定activity生命周期，便于管理rxjava生命周期
     public HttpObserver(Activity activity) {
         this.activity = activity;
+    }
+
+    public HttpObserver() {
     }
 
 

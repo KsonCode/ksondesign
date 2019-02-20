@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.weidu.mall.platform.R;
-import com.weidu.mall.platform.entity.ProductBean;
+import com.weidu.mall.platform.entity.HomeBean;
 
 import java.util.List;
 
@@ -21,10 +21,10 @@ public class ProductAdapter extends XRecyclerView.Adapter<RecyclerView.ViewHolde
     private final int TYPE_TWO = 1;
     private final int TYPE_THREE = 2;
 
-    private List<ProductBean.ProductItemBean> list;
+    private List<HomeBean.ProductItemBean> list;
     private Context context;
 
-    public ProductAdapter(List<ProductBean.ProductItemBean> list, Context context){
+    public ProductAdapter(List<HomeBean.ProductItemBean> list, Context context){
 
         this.list = list;
         this.context = context;
@@ -86,7 +86,7 @@ public class ProductAdapter extends XRecyclerView.Adapter<RecyclerView.ViewHolde
     public int getItemViewType(int position) {
         System.out.println("pos======="+position);
 
-        ProductBean.ProductItemBean productItemBean = list.get(position);
+        HomeBean.ProductItemBean productItemBean = list.get(position);
         if ("1002".equals(productItemBean.id)){
             return TYPE_ONE;
         }else if ("1003".equals(productItemBean.id)){

@@ -15,11 +15,12 @@ public class RxUtils {
      * 把没有切换线程功能的observable对象，转换成切换过的observable对象
      * @return
      */
-    public static ObservableTransformer schdulers(){
-        return new ObservableTransformer() {
+    public static <T> ObservableTransformer<T,T> schdulers(){
+        return new ObservableTransformer<T, T>() {
             @Override
-            public ObservableSource apply(Observable upstream) {
+            public ObservableSource<T> apply(Observable<T> upstream) {
                 return upstream.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+
             }
         };
     }

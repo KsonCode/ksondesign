@@ -6,16 +6,16 @@ import com.example.lib_core.base.mvp.BaseMvpActivity;
 import com.example.lib_core.base.mvp.BasePresenter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.weidu.mall.platform.adapter.ProductAdapter;
-import com.weidu.mall.platform.contract.ProductContract;
-import com.weidu.mall.platform.entity.ProductBean;
-import com.weidu.mall.platform.presenter.ProductPresenter;
+import com.weidu.mall.platform.contract.HomeContract;
+import com.weidu.mall.platform.entity.HomeBean;
+import com.weidu.mall.platform.presenter.HomePresenter;
 
 import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
 
-public class MainActivity extends BaseMvpActivity<ProductContract.IProductModel, ProductContract.ProductPresenter> implements ProductContract.IProductView {
+public class MainActivity extends BaseMvpActivity<HomeContract.IHomeModel, HomeContract.HomePresenter> implements HomeContract.IHomeView {
 
 
     @BindView(R.id.rv)
@@ -47,7 +47,7 @@ public class MainActivity extends BaseMvpActivity<ProductContract.IProductModel,
     }
 
     @Override
-    public void success(List<ProductBean.ProductItemBean> productBean) {
+    public void success(List<HomeBean.ProductItemBean> productBean) {
 
 //        showToast(result);
 //        SpUtils.getInstance().putSp("userId","1");
@@ -72,7 +72,7 @@ public class MainActivity extends BaseMvpActivity<ProductContract.IProductModel,
 
     @Override
     public BasePresenter initPresenter() {
-        return new ProductPresenter();
+        return new HomePresenter();
     }
 
     @Override
@@ -93,8 +93,15 @@ public class MainActivity extends BaseMvpActivity<ProductContract.IProductModel,
     }
 
 
+    /**
+     * 初始化数据
+     */
     @Override
     protected void init() {
-        presenter.getProductList(new HashMap<String, String>());
+        HashMap<String,String> params = new HashMap<>();
+        params.put("keyword","电脑");
+        params.put("page","1");
+        params.put("count","10");
+        presenter.getProductList(params);
     }
 }

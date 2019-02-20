@@ -4,8 +4,9 @@ import com.example.lib_network.bean.BaseResponseBean;
 
 import java.util.List;
 
-public class ProductBean extends BaseResponseBean {
+public class HomeBean extends BaseResponseBean {
 
+    //基类封装
 //    public String message;
 //    public String status;
 //    public Product result;
