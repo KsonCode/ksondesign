@@ -15,7 +15,7 @@ import com.weidu.mall.platform.entity.HomeBean;
 
 import java.util.List;
 
-public class ProductAdapter extends XRecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class HomeAdapter extends XRecyclerView.Adapter<RecyclerView.ViewHolder> {
     //
     private final int TYPE_ONE = 0;
     private final int TYPE_TWO = 1;
@@ -24,7 +24,7 @@ public class ProductAdapter extends XRecyclerView.Adapter<RecyclerView.ViewHolde
     private List<HomeBean.ProductItemBean> list;
     private Context context;
 
-    public ProductAdapter(List<HomeBean.ProductItemBean> list, Context context){
+    public HomeAdapter(List<HomeBean.ProductItemBean> list, Context context){
 
         this.list = list;
         this.context = context;

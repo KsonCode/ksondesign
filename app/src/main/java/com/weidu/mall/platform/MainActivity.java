@@ -5,7 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import com.example.lib_core.base.mvp.BaseMvpActivity;
 import com.example.lib_core.base.mvp.BasePresenter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
-import com.weidu.mall.platform.adapter.ProductAdapter;
+import com.weidu.mall.platform.adapter.HomeAdapter;
 import com.weidu.mall.platform.contract.HomeContract;
 import com.weidu.mall.platform.entity.HomeBean;
 import com.weidu.mall.platform.presenter.HomePresenter;
@@ -53,7 +53,7 @@ public class MainActivity extends BaseMvpActivity<HomeContract.IHomeModel, HomeC
 //        SpUtils.getInstance().putSp("userId","1");
 //        SpUtils.getInstance().putSp("sessionId","1767676767676767");
 
-        ProductAdapter productAdapter = new ProductAdapter(productBean,this);
+        HomeAdapter productAdapter = new HomeAdapter(productBean,this);
 
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(productAdapter);
